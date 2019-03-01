@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-content>
-      <MainContent/>
+      <MainContent />
     </v-content>
   </v-app>
 </template>
