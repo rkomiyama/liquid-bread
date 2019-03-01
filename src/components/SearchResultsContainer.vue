@@ -17,12 +17,6 @@ export default {
   data() {
     return {
       loading: false,
-      headers: [
-        { text: "ID", value: "id", width: "50px" },
-        { text: "Name", value: "name", width: "35%" },
-        { text: "ABV", value: "abv" },
-        { text: "IBU", value: "ibu" }
-      ],
       rowsPerPageItems: [
         10,
         50,
@@ -36,6 +30,10 @@ export default {
     search: {
       type: String,
       default: ""
+    },
+    headers: {
+      type: Array,
+      default: () => []
     }
   },
   methods: {

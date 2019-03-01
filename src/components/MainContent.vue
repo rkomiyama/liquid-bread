@@ -2,9 +2,8 @@
   <v-container>
     <v-layout text-xs-center wrap>
       <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">Liquid Bread</h1>
         <SearchBar v-model="search"/>
-        <SearchResultsContainer :search="search"/>
+        <SearchResultsContainer :search="search" :headers="headers"/>
       </v-flex>
     </v-layout>
   </v-container>
@@ -20,6 +19,12 @@ export default {
     return {
       search: ""
     };
+  },
+  props: {
+    headers: {
+      type: Array,
+      default: () => []
+    }
   },
   components: {
     SearchBar,
