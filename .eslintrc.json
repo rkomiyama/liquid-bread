@@ -1,0 +1,17 @@
+{
+	"extends": ["plugin:vue/essential"],
+	"parserOptions": {
+		"parser": "babel-eslint"
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"jest": true
+	},
+	"rules": {
+		"semi-style": 1,
+		"semi": 2,
+		"no-console": 1,
+		"no-debugger": 1
+	}
+}
