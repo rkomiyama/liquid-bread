@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import BeerCard from "./BeerCard";
+import BeerCard from "./BeerCard/BeerCard";
 
 export default {
   name: "SearchResults",
