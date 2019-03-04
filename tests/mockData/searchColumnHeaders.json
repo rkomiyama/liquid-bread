@@ -1,0 +1,15 @@
+[
+  { "text": "ID", "value": "id", "width": "50px" },
+  { "text": "Name", "value": "name", "width": "35%" },
+  { "text": "ABV", "value": "abv", "width": "50px" },
+  { "text": "IBU", "value": "ibu", "width": "50px" },
+  { "text": "EBC", "value": "ebc", "width": "50px" },
+  { "text": "SRM", "value": "srm", "width": "50px" },
+  { "text": "First brewed", "value": "first_brewed" },
+  { "text": "Volume", "value": "volume" },
+  { "text": "Atten. level", "value": "attenuation_level", "width": "40px" },
+  { "text": "pH", "value": "ph" },
+  { "text": "Boil volume", "value": "boil_volume" },
+  { "text": "Target OG", "value": "target_og" },
+  { "text": "Target FG", "value": "target_fg" }
+]

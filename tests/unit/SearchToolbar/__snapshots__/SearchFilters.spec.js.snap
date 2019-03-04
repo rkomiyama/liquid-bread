@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchFilters.vue SearchFilters has same HTML structure 1`] = `
+<v-card-stub tag="div">
+  <v-card-title-stub>Search filters</v-card-title-stub>
+  <v-card-text-stub class="pt-0">
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs1="">
+        <v-text-field-stub hide-details=""></v-text-field-stub>
+      </v-flex-stub>
+      <v-subheader-stub>&lt; ABV &gt;</v-subheader-stub>
+      <v-flex-stub tag="div" xs1="">
+        <v-text-field-stub hide-details=""></v-text-field-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs1="">
+        <v-text-field-stub hide-details=""></v-text-field-stub>
+      </v-flex-stub>
+      <v-subheader-stub>&lt; IBU &gt;</v-subheader-stub>
+      <v-flex-stub tag="div" xs1="">
+        <v-text-field-stub hide-details=""></v-text-field-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs1="">
+        <v-text-field-stub hide-details=""></v-text-field-stub>
+      </v-flex-stub>
+      <v-subheader-stub>&lt; EBC &gt;</v-subheader-stub>
+      <v-flex-stub tag="div" xs1="">
+        <v-text-field-stub hide-details=""></v-text-field-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+    <v-text-field-stub label="Beer name" hide-details="" value=""></v-text-field-stub>
+    <v-text-field-stub label="Yeast" hide-details="" value=""></v-text-field-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs12="" sm6="" md4="">
+        <v-menu-stub openDelay="0" closeDelay="0" lazy="true" contentClass="" maxWidth="auto" minWidth="250px" nudgeBottom="0" nudgeLeft="0" nudgeRight="40" nudgeTop="0" nudgeWidth="0" closeOnClick="true" fullWidth="true" maxHeight="auto" openOnClick="true" offsetY="true" origin="top left" transition="scale-transition">
+          <v-text-field-stub label="Brewed before" prepend-icon="event" readonly="readonly" hide-details=""></v-text-field-stub>
+          <v-date-picker-stub width="290" eventColor="warning" firstDayOfWeek="0" locale="en-us" nextIcon="$vuetify.icons.next" prevIcon="$vuetify.icons.prev" showCurrent="true" type="month"></v-date-picker-stub>
+        </v-menu-stub>
+      </v-flex-stub>
+      <v-flex-stub tag="div" xs12="" sm6="" md4="">
+        <v-menu-stub openDelay="0" closeDelay="0" lazy="true" contentClass="" maxWidth="auto" minWidth="250px" nudgeBottom="0" nudgeLeft="0" nudgeRight="40" nudgeTop="0" nudgeWidth="0" closeOnClick="true" fullWidth="true" maxHeight="auto" openOnClick="true" offsetY="true" origin="top left" transition="scale-transition">
+          <v-text-field-stub label="Brewed after" prepend-icon="event" readonly="readonly" hide-details=""></v-text-field-stub>
+          <v-date-picker-stub width="290" eventColor="warning" firstDayOfWeek="0" locale="en-us" nextIcon="$vuetify.icons.next" prevIcon="$vuetify.icons.prev" showCurrent="true" type="month"></v-date-picker-stub>
+        </v-menu-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+    <v-text-field-stub label="Hops" hide-details="" value=""></v-text-field-stub>
+    <v-text-field-stub label="Malt" hide-details="" value=""></v-text-field-stub>
+    <v-text-field-stub label="Food" hide-details="" value=""></v-text-field-stub>
+    <v-text-field-stub label="IDs" hide-details="" value=""></v-text-field-stub>
+  </v-card-text-stub>
+</v-card-stub>
+`;

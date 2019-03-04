@@ -25,7 +25,9 @@ export default {
   },
   watch: {
     checked(checked) {
-      this.$emit("change:checks", checked);
+      if (checked && checked.length) {
+        this.$emit("change:checks", checked);
+      }
     }
   },
   props: {

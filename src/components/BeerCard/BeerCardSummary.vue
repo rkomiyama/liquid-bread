@@ -44,12 +44,7 @@ export default {
       showMore: false
     };
   },
-  props: {
-    beer: {
-      type: Object,
-      default: () => {}
-    }
-  },
+  props: ["beer"],
   components: {
     BeerCardValues,
     BeerCardDetails

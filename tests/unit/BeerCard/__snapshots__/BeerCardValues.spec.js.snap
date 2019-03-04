@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerCardValues.vue BeerCardValues has same HTML structure 1`] = `
+<v-layout-stub tag="div">
+  <v-flex-stub tag="div" xs6="">
+    <h3>ABV</h3>
+    <h3>IBU</h3>
+    <h3>EBC</h3>
+    <h3>SRM</h3>
+    <div>First brewed</div>
+    <div>Volume</div>
+    <div>Attenuation level</div>
+    <div>pH</div>
+    <div>Boil volume</div>
+    <div>Target OG</div>
+    <div>Target FG</div>
+    <div>Contributed by</div>
+  </v-flex-stub>
+  <v-flex-stub tag="div" xs6="">
+    <h3>4.5%</h3>
+    <h3>60 BU</h3>
+    <h3>20</h3>
+    <h3>10</h3>
+    <div>09/2007</div>
+    <div>20 liters</div>
+    <div>75</div>
+    <div>4.4</div>
+    <div>25 liters</div>
+    <div>1044</div>
+    <div>1010</div>
+    <div>Sam Mason &lt;samjbmason&gt;</div>
+  </v-flex-stub>
+</v-layout-stub>
+`;
