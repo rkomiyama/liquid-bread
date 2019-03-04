@@ -1,8 +1,8 @@
 <template>
   <v-app dark>
-    <SearchToolbar @change:headers="headersChangeHandler"/>
+    <SearchToolbar @change:headers="headersChangeHandler" @change:filters="filtersChangeHandler"/>
     <v-content>
-      <MainContent :headers="headers"/>
+      <MainContent :headers="headers" :filters="filters"/>
     </v-content>
   </v-app>
 </template>
@@ -14,13 +14,17 @@ import MainContent from "./components/MainContent";
 export default {
   name: "App",
   methods: {
-    headersChangeHandler(event) {
-      this.headers = event;
+    headersChangeHandler(headers) {
+      this.headers = headers;
+    },
+    filtersChangeHandler(filters) {
+      this.filters = filters;
     }
   },
   data() {
     return {
-      headers: null
+      headers: null,
+      filters: null
     };
   },
   components: {
