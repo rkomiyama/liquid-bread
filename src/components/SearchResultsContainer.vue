@@ -17,12 +17,7 @@ export default {
   data() {
     return {
       loading: false,
-      rowsPerPageItems: [
-        10,
-        50,
-        100,
-        { text: "$vuetify.dataIterator.rowsPerPageAll", value: -1 }
-      ],
+      rowsPerPageItems: [10, 20, 40, 80],
       results: []
     };
   },
@@ -34,6 +29,10 @@ export default {
     headers: {
       type: Array,
       default: () => []
+    },
+    filters: {
+      type: Object,
+      default: () => {}
     }
   },
   methods: {
@@ -51,6 +50,62 @@ export default {
           this.loading = false;
           throw new Error(err);
         });
+    }
+  },
+  watch: {
+    filters(filters) {
+      let searchParams = {};
+
+      if (filters.abvGt) {
+        searchParams.abv_gt = filters.abvGt;
+      }
+      if (filters.abvLt) {
+        searchParams.abv_lt = filters.abvLt;
+      }
+      if (filters.ibuGt) {
+        searchParams.ibu_gt = filters.ibuGt;
+      }
+      if (filters.ibuLt) {
+        searchParams.ibu_lt = filters.ibuLt;
+      }
+      if (filters.ebcGt) {
+        searchParams.ebc_gt = filters.ebcGt;
+      }
+      if (filters.ebcLt) {
+        searchParams.ebc_lt = filters.ebcLt;
+      }
+      if (filters.beer_name) {
+        searchParams.beer_name = filters.beerName.replace(/ /g, "_");
+      }
+      if (filters.yeast) {
+        searchParams.yeast = filters.yeast.replace(/ /g, "_");
+      }
+      if (filters.beforeDate) {
+        searchParams.brewed_before = filters.beforeDate
+          .split("-")
+          .reverse()
+          .join("/");
+      }
+      if (filters.afterDate) {
+        searchParams.brewed_after = filters.afterDate
+          .split("-")
+          .reverse()
+          .join("/");
+      }
+      if (filters.hops) {
+        searchParams.hops = filters.hops.replace(/ /g, "_");
+      }
+      if (filters.malt) {
+        searchParams.malt = filters.malt.replace(/ /g, "_");
+      }
+      if (filters.food) {
+        searchParams.food = filters.food.replace(/ /g, "_");
+      }
+      if (filters.ids) {
+        searchParams.ids = filters.ids.replace(/ /g, "|");
+      }
+
+      this.getResults(searchParams);
     }
   },
   created() {

@@ -4,28 +4,35 @@
     <v-spacer></v-spacer>
     <v-toolbar-side-icon @click="showMore = !showMore"></v-toolbar-side-icon>
     <v-layout v-if="showMore" slot="extension">
+      <v-flex xs8>
+        <SearchFilters
+          class="filters-list"
+          @submit:applySearchFilters="filtersChangeHandler"
+          :applyFilters="applyFilters"
+        />
+        <v-btn @click="applyFilters = true">Search</v-btn>
+      </v-flex>
       <v-spacer></v-spacer>
-      <v-list dense>
-        <v-subheader>Column headers</v-subheader>
-        <v-list-tile v-for="(header, i) in headers" :key="i">
-          <v-list-tile-action>
-            <v-checkbox v-model="checked[i]"></v-checkbox>
-          </v-list-tile-action>
-          <v-list-tile-content @click="checked[i] = !checked[i]">
-            <v-list-tile-title>{{ header.text }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+      <SearchColumnHeaders
+        class="headers-list"
+        @change:checks="checksChangeHandler"
+        :headers="headers"
+        :passedChecks="checked"
+      />
     </v-layout>
   </v-toolbar>
 </template>
 
 <script>
+import SearchFilters from "./SearchFilters";
+import SearchColumnHeaders from "./SearchColumnHeaders";
+
 export default {
   name: "SearchToolbar",
   data() {
     return {
       showMore: false,
+      applyFilters: false,
       headers: [
         { text: "ID", value: "id", width: "50px" },
         { text: "Name", value: "name", width: "35%" },
@@ -46,12 +53,14 @@ export default {
         { text: "Target FG", value: "target_fg" }
       ],
       checked: [],
-      height: undefined,
-      listData: null
+      height: undefined
     };
   },
+  mounted() {
+    this.showMore = true;
+  },
   created() {
-    this.checked = Array(this.headers.length).fill(false);
+    this.checked = Array(20).fill(false);
     this.checked.fill(true, 0, 7);
   },
   watch: {
@@ -62,16 +71,34 @@ export default {
         });
       }
     },
-    checked(checked) {
-      const selectedHeaders = this.headers.filter((header, i) => checked[i]);
-      this.$emit("change:headers", selectedHeaders);
+    applyFilters(val) {
+      if (val) {
+        this.$nextTick(function() {
+          this.applyFilters = false;
+        });
+      }
     }
+  },
+  methods: {
+    filtersChangeHandler(filters) {
+      this.$emit("change:filters", filters);
+    },
+    checksChangeHandler(checks) {
+      const selectedHeaders = this.headers.filter((header, i) => checks[i]);
+      this.$emit("change:headers", selectedHeaders);
+      this.checked = checks;
+    }
+  },
+  components: {
+    SearchColumnHeaders,
+    SearchFilters
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.v-list {
+.headers-list,
+.filters-list {
   height: 200px;
   overflow-y: scroll;
 }
