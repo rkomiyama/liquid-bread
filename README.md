@@ -18,6 +18,13 @@ npm run serve
 npm run styleguide
 ```
 
+### Run on a Docker container
+
+```
+docker pull rkomiyama/liquid-bread
+docker run -t -p 8080:8080 rkomiyama/liquid-bread
+```
+
 ### Compiles and minifies for production
 
 ```
