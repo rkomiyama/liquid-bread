@@ -28,6 +28,9 @@
 <script>
 import BeerCard from "./BeerCard/BeerCard";
 
+/**
+ * Presentational component that displays the search results
+ */
 export default {
   name: "SearchResults",
   methods: {
@@ -70,25 +73,35 @@ export default {
     };
   },
   props: {
+    /**
+     * Headers for the search results table columns
+     */
     headers: {
-      type: Array,
-      default: () => []
+      type: Array
     },
+    /**
+     * Loading state of the search
+     */
     loading: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
+    /**
+     * Search results with beer data
+     */
     results: {
-      type: Array,
-      default: () => []
+      type: Array
     },
+    /**
+     * Quick-search string inputted by the user
+     */
     search: {
-      type: String,
-      default: ""
+      type: String
     },
+    /**
+     * Numerical values that can be selected to show a number of rows
+     */
     rowsPerPageItems: {
-      type: Array,
-      default: () => []
+      type: Array
     }
   }
 };
@@ -96,3 +109,12 @@ export default {
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```jsx
+const mockHeaders = require('../../tests/mockData/searchColumnHeaders.json');
+const mockResults = require('../../tests/mockData/searchResults.json');
+const mockRows = [10, 20, 40, 80];
+<SearchResults :headers="mockHeaders" :results="mockResults" :rowsPerPageItems="mockRows" />
+```
+</docs>

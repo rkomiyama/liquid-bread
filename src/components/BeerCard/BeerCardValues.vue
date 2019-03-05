@@ -32,11 +32,28 @@
 </template>
 
 <script>
+/**
+ * Displays various numerical values regarding the beer
+ */
 export default {
   name: "BeerCardValues",
-  props: ["beer"]
+  props: {
+    /**
+     * Beer data object for the beer
+     */
+    beer: {
+      type: Object
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```jsx
+const mockData = require('../../../tests/mockData/beerData.json');
+<BeerCardValues :beer="mockData" />
+```
+</docs>

@@ -40,11 +40,34 @@
 </template>
 
 <script>
+/**
+ * Displays beer information regarding its crafting method and ingredients
+ */
 export default {
   name: "BeerCardDetails",
-  props: ["ingredients", "method"]
+  props: {
+    /**
+     * Method to craft the beer
+     */
+    method: {
+      type: Object
+    },
+    /**
+     * Ingredients for the beer
+     */
+    ingredients: {
+      type: Object
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```jsx
+const mockData = require('../../../tests/mockData/beerData.json');
+<BeerCardDetails :method="mockData.method" :ingredients="mockData.ingredients" />
+```
+</docs>

@@ -14,9 +14,19 @@
 <script>
 import BeerCardSummary from "./BeerCardSummary";
 
+/**
+ * Container component for beer data.
+ */
 export default {
   name: "BeerCard",
-  props: ["beer"],
+  props: {
+    /**
+     * Beer data object for the beer
+     */
+    beer: {
+      type: Object
+    }
+  },
   components: {
     BeerCardSummary
   }
@@ -28,3 +38,10 @@ export default {
   background-color: white;
 }
 </style>
+
+<docs>
+```jsx
+const mockData = require('../../../tests/mockData/beerData.json');
+<BeerCard :beer="mockData" />
+```
+</docs>

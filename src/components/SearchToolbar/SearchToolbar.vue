@@ -80,11 +80,31 @@ export default {
     }
   },
   methods: {
+    /**
+     * Gets called when filters change
+     * @param {Object} filters Filters object
+     * @public
+     */
     filtersChangeHandler(filters) {
+      /**
+       * Triggered when the filters have changed
+       * @event change:filters
+       * @type {Object}
+       */
       this.$emit("change:filters", filters);
     },
+    /**
+     * Gets called when checkboxes change
+     * @param {Array} checks Checks array
+     * @public
+     */
     checksChangeHandler(checks) {
       const selectedHeaders = this.headers.filter((header, i) => checks[i]);
+      /**
+       * Triggered when the headers selection has changed
+       * @event change:headers
+       * @type {Object}
+       */
       this.$emit("change:headers", selectedHeaders);
       this.checked = checks;
     }
@@ -103,3 +123,9 @@ export default {
   overflow-y: scroll;
 }
 </style>
+
+<docs>
+```jsx
+<SearchToolbar :style="{position: 'relative'}" />
+```
+</docs>
