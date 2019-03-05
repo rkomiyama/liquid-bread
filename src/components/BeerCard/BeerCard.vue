@@ -16,12 +16,7 @@ import BeerCardSummary from "./BeerCardSummary";
 
 export default {
   name: "BeerCard",
-  props: {
-    beer: {
-      type: Object,
-      default: () => {}
-    }
-  },
+  props: ["beer"],
   components: {
     BeerCardSummary
   }

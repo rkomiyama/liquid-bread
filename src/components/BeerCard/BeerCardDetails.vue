@@ -42,16 +42,7 @@
 <script>
 export default {
   name: "BeerCardDetails",
-  props: {
-    ingredients: {
-      type: Object,
-      default: () => {}
-    },
-    method: {
-      type: Object,
-      default: () => {}
-    }
-  }
+  props: ["ingredients", "method"]
 };
 </script>
 

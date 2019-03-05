@@ -10,7 +10,7 @@
           @submit:applySearchFilters="filtersChangeHandler"
           :applyFilters="applyFilters"
         />
-        <v-btn @click="applyFilters = true">Search</v-btn>
+        <v-btn @click.native="applyFilters = true">Search</v-btn>
       </v-flex>
       <v-spacer></v-spacer>
       <SearchColumnHeaders
@@ -47,10 +47,10 @@ export default {
           value: "attenuation_level",
           width: "40px"
         },
-        { text: "pH", value: "ph" },
-        { text: "Boil volume", value: "boil_volume" },
-        { text: "Target OG", value: "target_og" },
-        { text: "Target FG", value: "target_fg" }
+        { text: "pH", value: "ph", width: "50px" },
+        { text: "Boil volume", value: "boil_volume", width: "50px" },
+        { text: "Target OG", value: "target_og", width: "50px" },
+        { text: "Target FG", value: "target_fg", width: "50px" }
       ],
       checked: [],
       height: undefined
@@ -60,7 +60,7 @@ export default {
     this.showMore = true;
   },
   created() {
-    this.checked = Array(20).fill(false);
+    this.checked = Array(this.headers.length).fill(false);
     this.checked.fill(true, 0, 7);
   },
   watch: {

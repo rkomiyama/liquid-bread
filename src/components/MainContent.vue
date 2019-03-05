@@ -2,7 +2,7 @@
   <v-container>
     <v-layout text-xs-center wrap>
       <v-flex mb-4>
-        <SearchBar v-model="search"/>
+        <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
         <SearchResultsContainer :search="search" :headers="headers" :filters="filters"/>
       </v-flex>
     </v-layout>
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import SearchBar from "./SearchBar";
 import SearchResultsContainer from "./SearchResultsContainer";
 
 export default {
@@ -31,7 +30,6 @@ export default {
     }
   },
   components: {
-    SearchBar,
     SearchResultsContainer
   }
 };

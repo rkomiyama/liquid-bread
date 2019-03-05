@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerCardSummary.vue BeerCardSummary has same HTML structure 1`] = `
+<div>
+  <v-card-title-stub>
+    <h1>
+      Buzz
+      <span class="tagline font-italic">A Real Bitter Experience.</span></h1>
+  </v-card-title-stub>
+  <v-card-text-stub class="text-xs-left pt-0">
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">
+        <BeerCardValues-stub beer="[object Object]"></BeerCardValues-stub>
+      </v-flex-stub>
+      <v-flex-stub tag="div" xs6="">
+        <div class="font-weight-bold">Description</div>
+        <div>A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.</div>
+        <div class="font-weight-bold">Brewers tips</div>
+        <div>The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.</div>
+        <div class="font-weight-bold">Food pairing</div>
+        <div>Spicy chicken tikka masala</div>
+        <div>Grilled chicken quesadilla</div>
+        <div>Caramel toffee cake</div>
+      </v-flex-stub>
+    </v-layout-stub>
+    <v-slide-y-transition-stub origin="top center 0">
+      <div style="display:none;">
+        <v-divider-stub></v-divider-stub>
+        <BeerCardDetails-stub method="[object Object]" ingredients="[object Object]"></BeerCardDetails-stub>
+      </div>
+    </v-slide-y-transition-stub>
+    <v-flex-stub tag="div" text-xs-center="">
+      <v-btn-stub activeClass="v-btn--active" tag="button" flat="true" type="button">Show More</v-btn-stub>
+    </v-flex-stub>
+  </v-card-text-stub>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults.vue SearchResults has same HTML structure 1`] = `
+<v-data-table-stub noDataText="$vuetify.noDataText" noResultsText="$vuetify.dataIterator.noResultsText" nextIcon="$vuetify.icons.next" prevIcon="$vuetify.icons.prev" rowsPerPageItems="" rowsPerPageText="$vuetify.dataTable.rowsPerPageText" search="" filter="function _default(val, search) {
+                return val != null &amp;&amp; typeof val !== 'boolean' &amp;&amp; val.toString().toLowerCase().indexOf(search) !== -1;
+            }" customFilter="function _default(items, search, filter, headers) {
+                search = search.toString().toLowerCase();
+                if (search.trim() === '') return items;
+                var props = headers.map(function (h) {
+                    return h.value;
+                });
+                return items.filter(function (item) {
+                    return props.some(function (prop) {
+                        return filter(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[&quot;getObjectValueByPath&quot;])(item, prop, item[prop]), search);
+                    });
+                });
+            }" customSort="function () { [native code] }" value="" items="[object Object],[object Object],[object Object],[object Object],[object Object]" itemKey="id" sortIcon="$vuetify.icons.sort" headers="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" headerText="text">
+  <v-progress-linear-stub color="blue" active="true" bufferValue="100" height="7" indeterminate="indeterminate" value="0"></v-progress-linear-stub>
+</v-data-table-stub>
+`;

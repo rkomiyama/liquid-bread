@@ -48,7 +48,6 @@ export default {
         })
         .catch(err => {
           this.loading = false;
-          throw new Error(err);
         });
     }
   },
@@ -107,9 +106,6 @@ export default {
 
       this.getResults(searchParams);
     }
-  },
-  created() {
-    this.getResults();
   },
   components: {
     SearchResults

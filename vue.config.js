@@ -1,11 +1,11 @@
 module.exports = {
-    configureWebpack: {
-        devServer: {
-            watchOptions: {
-                poll: true
-            },
-            disableHostCheck: true,
-            host: 'localhost'
-        }
+  configureWebpack: {
+    devServer: {
+      watchOptions: {
+        poll: true
+      },
+      disableHostCheck: true,
+      host: "localhost"
     }
+  }
 };

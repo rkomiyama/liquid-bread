@@ -34,12 +34,7 @@
 <script>
 export default {
   name: "BeerCardValues",
-  props: {
-    beer: {
-      type: Object,
-      default: () => {}
-    }
-  }
+  props: ["beer"]
 };
 </script>
 

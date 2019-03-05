@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerCardDetails.vue BeerCardDetails has same HTML structure 1`] = `
+<v-layout-stub tag="div">
+  <v-flex-stub tag="div" xs6="">
+    <h3>Ingredients</h3>
+    <h4>Malt</h4>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Maris Otter Extra Pale</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">3.3 kilograms</v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Caramalt</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">0.2 kilograms</v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Munich</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">0.4 kilograms</v-flex-stub>
+    </v-layout-stub>
+    <h4>Hops</h4>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Fuggles (start)</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">25 grams, bitter</v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">First Gold (start)</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">25 grams, bitter</v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Fuggles (middle)</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">37.5 grams, flavour</v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">First Gold (middle)</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">37.5 grams, flavour</v-flex-stub>
+    </v-layout-stub>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Cascade (end)</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">37.5 grams, flavour</v-flex-stub>
+    </v-layout-stub>
+    <h4>Yeast</h4>
+    <div>Wyeast 1056 - American Ale™</div>
+  </v-flex-stub>
+  <v-flex-stub tag="div" xs6="">
+    <h3>Method</h3>
+    <h4>Fermentation</h4>
+    <v-layout-stub tag="div">
+      <v-flex-stub tag="div" xs6="">Temp</v-flex-stub>
+      <v-flex-stub tag="div" xs6="">19 celsius</v-flex-stub>
+    </v-layout-stub>
+    <h4>Mash temp</h4>
+    <div>
+      <v-layout-stub tag="div">
+        <v-flex-stub tag="div" xs6="">Duration</v-flex-stub>
+        <v-flex-stub tag="div" xs6="">75</v-flex-stub>
+      </v-layout-stub>
+      <v-layout-stub tag="div">
+        <v-flex-stub tag="div" xs6="">Temp</v-flex-stub>
+        <v-flex-stub tag="div" xs6="">64 celsius</v-flex-stub>
+      </v-layout-stub>
+    </div>
+    <h4>Twist</h4>
+    <div>N/A</div>
+  </v-flex-stub>
+</v-layout-stub>
+`;
