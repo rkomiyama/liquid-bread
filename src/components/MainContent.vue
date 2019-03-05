@@ -12,6 +12,9 @@
 <script>
 import SearchResultsContainer from "./SearchResultsContainer";
 
+/**
+ * This is where the main content resides
+ */
 export default {
   name: "MainContent",
   data() {
@@ -20,13 +23,17 @@ export default {
     };
   },
   props: {
+    /**
+     * Headers for the search results table columns
+     */
     headers: {
-      type: Array,
-      default: () => []
+      type: Array
     },
+    /**
+     * Filters that are applied to the search
+     */
     filters: {
-      type: Object,
-      default: () => {}
+      type: Object
     }
   },
   components: {
@@ -37,3 +44,9 @@ export default {
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```html
+<MainContent :headers="headers" :filters="filters"/>
+```
+</docs>

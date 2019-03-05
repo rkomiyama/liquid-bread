@@ -37,6 +37,9 @@
 import BeerCardValues from "./BeerCardValues";
 import BeerCardDetails from "./BeerCardDetails";
 
+/**
+ * Displays the description, brewers tips, and food pairing for the beer.
+ */
 export default {
   name: "BeerCardSummary",
   data() {
@@ -44,7 +47,14 @@ export default {
       showMore: false
     };
   },
-  props: ["beer"],
+  props: {
+    /**
+     * Beer data object for the beer
+     */
+    beer: {
+      type: Object
+    }
+  },
   components: {
     BeerCardValues,
     BeerCardDetails
@@ -57,3 +67,10 @@ export default {
   color: grey;
 }
 </style>
+
+<docs>
+```jsx
+const mockData = require('../../../tests/mockData/beerData.json');
+<BeerCardSummary :beer="mockData" />
+```
+</docs>

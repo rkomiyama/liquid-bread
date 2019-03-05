@@ -98,11 +98,19 @@
 </template>
 
 <script>
+/**
+ *
+ */
 export default {
   name: "SearchFilters",
   watch: {
     applyFilters(val) {
       if (val) {
+        /**
+         * Triggered when the search button is clicked
+         * @event submit:applySearchFilters
+         * @type {Object}
+         */
         this.$emit("submit:applySearchFilters", { ...this.filters });
       }
     }
@@ -130,9 +138,11 @@ export default {
     };
   },
   props: {
+    /**
+     * Flag to check if filters have been applied
+     */
     applyFilters: {
-      type: Boolean,
-      default: false
+      type: Boolean
     }
   }
 };
@@ -140,3 +150,9 @@ export default {
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```jsx
+<SearchFilters :style="{height: '200px', overflowY: 'scroll'}" />
+```
+</docs>

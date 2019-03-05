@@ -13,6 +13,9 @@
 </template>
 
 <script>
+/**
+ * Checkbox list of all the headers for the search results table columns
+ */
 export default {
   name: "SearchColumnHeaders",
   data() {
@@ -26,18 +29,27 @@ export default {
   watch: {
     checked(checked) {
       if (checked && checked.length) {
+        /**
+         * Triggered when a checkbox is clicked
+         * @event change:checks
+         * @type {Array}
+         */
         this.$emit("change:checks", checked);
       }
     }
   },
   props: {
+    /**
+     * Headers for the search results table columns
+     */
     headers: {
-      type: Array,
-      default: () => []
+      type: Array
     },
+    /**
+     * Saved states of the checkboxes
+     */
     passedChecks: {
-      type: Array,
-      default: () => []
+      type: Array
     }
   }
 };
@@ -45,3 +57,15 @@ export default {
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```jsx
+const mockData = require('../../../tests/mockData/searchColumnHeaders.json');
+let checks = Array(mockData.length).fill(false);
+<SearchColumnHeaders
+  :headers="mockData"
+  :passedChecks="checks"
+  :style="{height: '200px', overflowY: 'scroll'}"
+/>
+```
+</docs>

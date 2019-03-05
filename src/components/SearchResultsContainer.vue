@@ -12,6 +12,9 @@
 import axios from "axios";
 import SearchResults from "./SearchResults";
 
+/**
+ * Container component that handles search results data
+ */
 export default {
   name: "SearchResultsContainer",
   data() {
@@ -22,20 +25,31 @@ export default {
     };
   },
   props: {
+    /**
+     * Quick-search string inputted by the user
+     */
     search: {
-      type: String,
-      default: ""
+      type: String
     },
+    /**
+     * Headers for the search results table columns
+     */
     headers: {
-      type: Array,
-      default: () => []
+      type: Array
     },
+    /**
+     * Filters that are applied to the search
+     */
     filters: {
-      type: Object,
-      default: () => {}
+      type: Object
     }
   },
   methods: {
+    /**
+     * Getter function for searching beer data
+     * @param {Object} params Parameters for the search
+     * @public
+     */
     async getResults(params = {}) {
       this.loading = true;
       this.results = await axios
@@ -115,3 +129,9 @@ export default {
 
 <style lang="scss" scoped>
 </style>
+
+<docs>
+```html
+<SearchResultsContainer :search="search" :headers="headers" :filters="filters"/>
+```
+</docs>
