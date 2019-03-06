@@ -1,5 +1,6 @@
 <template>
   <v-toolbar app ref="toolbar" :extension-height="height">
+    <v-icon>local_drink</v-icon>
     <v-toolbar-title>Liquid Bread</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-side-icon @click="showMore = !showMore"></v-toolbar-side-icon>
@@ -10,15 +11,16 @@
           @submit:applySearchFilters="filtersChangeHandler"
           :applyFilters="applyFilters"
         />
-        <v-btn @click.native="applyFilters = true">Search</v-btn>
+        <v-btn color="#595859" @click.native="applyFilters = true">Search</v-btn>
       </v-flex>
-      <v-spacer></v-spacer>
-      <SearchColumnHeaders
-        class="headers-list"
-        @change:checks="checksChangeHandler"
-        :headers="headers"
-        :passedChecks="checked"
-      />
+      <v-flex xs4 pl-2>
+        <SearchColumnHeaders
+          class="headers-list"
+          @change:checks="checksChangeHandler"
+          :headers="headers"
+          :passedChecks="checked"
+        />
+      </v-flex>
     </v-layout>
   </v-toolbar>
 </template>

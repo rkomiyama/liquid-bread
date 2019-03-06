@@ -10,13 +10,18 @@
   >
     <v-progress-linear v-slot:progress color="blue" indeterminate></v-progress-linear>
     <template v-slot:items="props">
-      <tr @click="props.expanded = !props.expanded">
+      <tr class="table-row" @click="props.expanded = !props.expanded">
         <td v-for="(column, i) in headers" :key="i" class="text-xs-left">
           <span
             v-if="column.value === 'volume' || column.value === 'boil_volume'"
           >{{ props.item[column['value']]['value'] }} {{ props.item[column['value']]['unit'] }}</span>
           <span v-else>{{ props.item[column['value']] }}</span>
         </td>
+      </tr>
+    </template>
+    <template v-slot:no-data>
+      <tr>
+        <td class="text-xs-center" :colspan="headers ? headers.length : 1">No data available</td>
       </tr>
     </template>
     <template v-slot:expand="props">
@@ -108,6 +113,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-table {
+  tr {
+    :hover {
+      cursor: pointer;
+    }
+    &:nth-child(4n + 3) {
+      background-color: #595859;
+    }
+  }
+}
 </style>
 
 <docs>
