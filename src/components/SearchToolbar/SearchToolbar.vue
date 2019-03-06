@@ -10,8 +10,14 @@
           class="filters-list"
           @submit:applySearchFilters="filtersChangeHandler"
           :applyFilters="applyFilters"
+          :clearFilters="clearFilters"
         />
-        <v-btn color="#595859" @click.native="applyFilters = true">Search</v-btn>
+        <v-btn class="search-button" color="#595859" @click.native="applyFilters = true">Search</v-btn>
+        <v-btn
+          class="clear-button"
+          color="#595859"
+          @click.native="clearFilters = true"
+        >Clear filters</v-btn>
       </v-flex>
       <v-flex xs4 pl-2>
         <SearchColumnHeaders
@@ -29,12 +35,16 @@
 import SearchFilters from "./SearchFilters";
 import SearchColumnHeaders from "./SearchColumnHeaders";
 
+/**
+ * Toolbar from Vuetify which contains search filters and header columns
+ */
 export default {
   name: "SearchToolbar",
   data() {
     return {
       showMore: false,
       applyFilters: false,
+      clearFilters: false,
       headers: [
         { text: "ID", value: "id", width: "50px" },
         { text: "Name", value: "name", width: "35%" },
@@ -77,6 +87,13 @@ export default {
       if (val) {
         this.$nextTick(function() {
           this.applyFilters = false;
+        });
+      }
+    },
+    clearFilters(val) {
+      if (val) {
+        this.$nextTick(function() {
+          this.clearFilters = false;
         });
       }
     }

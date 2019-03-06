@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BeerCard.vue BeerCard has same HTML structure 1`] = `
-<v-card-stub tag="div" flat="true">
+<v-card-stub tag="div" flat="true" class="beer-card">
   <v-layout-stub tag="div">
-    <v-flex-stub tag="div" xs2="">
+    <v-flex-stub tag="div" xs2="" pa-2="">
       <v-img-stub src="https://images.punkapi.com/v2/keg.png" position="center center" transition="fade-transition" class="beer-image"></v-img-stub>
     </v-flex-stub>
     <v-flex-stub tag="div" xs10="">

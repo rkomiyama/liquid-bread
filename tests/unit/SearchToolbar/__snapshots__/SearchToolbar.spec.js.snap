@@ -2,16 +2,19 @@
 
 exports[`SearchToolbar.vue SearchToolbar has same HTML structure 1`] = `
 <v-toolbar-stub app="true" extensionHeight="0" scrollThreshold="300">
+  <v-icon-stub>local_drink</v-icon-stub>
   <v-toolbar-title-stub>Liquid Bread</v-toolbar-title-stub>
   <v-spacer-stub></v-spacer-stub>
   <v-toolbar-side-icon-stub></v-toolbar-side-icon-stub>
   <v-layout-stub tag="div">
     <v-flex-stub tag="div" xs8="">
       <SearchFilters-stub class="filters-list"></SearchFilters-stub>
-      <v-btn-stub activeClass="v-btn--active" tag="button" type="button">Search</v-btn-stub>
+      <v-btn-stub color="#595859" activeClass="v-btn--active" tag="button" type="button" class="search-button">Search</v-btn-stub>
+      <v-btn-stub color="#595859" activeClass="v-btn--active" tag="button" type="button" class="clear-button">Clear filters</v-btn-stub>
     </v-flex-stub>
-    <v-spacer-stub></v-spacer-stub>
-    <SearchColumnHeaders-stub headers="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" passedChecks="true,true,true,true,true,true,true,false,false,false,false,false,false" class="headers-list"></SearchColumnHeaders-stub>
+    <v-flex-stub tag="div" xs4="" pl-2="">
+      <SearchColumnHeaders-stub headers="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" passedChecks="true,true,true,true,true,true,true,false,false,false,false,false,false" class="headers-list"></SearchColumnHeaders-stub>
+    </v-flex-stub>
   </v-layout-stub>
 </v-toolbar-stub>
 `;

@@ -3,7 +3,7 @@
     <v-subheader>Search filters</v-subheader>
     <v-card-text class="pt-0">
       <v-layout wrap justify-space-between>
-        <v-flex lg3 md3 sm12>
+        <v-flex lg3 md3 sm5>
           <v-text-field v-model="filters.abvLt" label="ABV (less than)" hide-details></v-text-field>
           <v-text-field v-model="filters.abvGt" label="ABV (greater than)" hide-details></v-text-field>
           <v-text-field v-model="filters.ibuLt" label="IBU (less than)" hide-details></v-text-field>
@@ -11,7 +11,7 @@
           <v-text-field v-model="filters.ebcLt" label="EBC (less than)" hide-details></v-text-field>
           <v-text-field v-model="filters.ebcGt" label="EBC (greater than)" hide-details></v-text-field>
         </v-flex>
-        <v-flex lg3 md3 sm12>
+        <v-flex lg3 md3 sm5>
           <v-text-field v-model="filters.beerName" label="Beer name" hide-details></v-text-field>
           <v-text-field v-model="filters.yeastName" label="Yeast" hide-details></v-text-field>
           <v-text-field v-model="filters.hopsName" label="Hops" hide-details></v-text-field>
@@ -38,6 +38,7 @@
               label="Brewed before"
               prepend-icon="event"
               readonly
+              clearable
               hide-details
             ></v-text-field>
             <v-date-picker
@@ -64,6 +65,7 @@
               label="Brewed after"
               prepend-icon="event"
               readonly
+              clearable
               hide-details
             ></v-text-field>
             <v-date-picker
@@ -80,10 +82,24 @@
 
 <script>
 /**
- *
+ * Component containing the search filters
  */
 export default {
   name: "SearchFilters",
+  props: {
+    /**
+     * Flag to check if filters have been applied
+     */
+    applyFilters: {
+      type: Boolean
+    },
+    /**
+     * Flag to check if filters need to be cleared
+     */
+    clearFilters: {
+      type: Boolean
+    }
+  },
   watch: {
     applyFilters(val) {
       if (val) {
@@ -93,6 +109,28 @@ export default {
          * @type {Object}
          */
         this.$emit("submit:applySearchFilters", { ...this.filters });
+      }
+    },
+    clearFilters(val) {
+      if (val) {
+        this.filters = {
+          abvLt: null,
+          abvGt: null,
+          ibuLt: null,
+          ibuGt: null,
+          ebcLt: null,
+          ebcGt: null,
+          beerName: "",
+          yeastName: "",
+          beforeDate: null,
+          afterDate: null,
+          hopsName: "",
+          maltName: "",
+          foodName: "",
+          ids: ""
+        };
+        this.beforeDatepicker = null;
+        this.afterDatepicker = null;
       }
     }
   },
@@ -117,14 +155,6 @@ export default {
       beforeDatepicker: null,
       afterDatepicker: null
     };
-  },
-  props: {
-    /**
-     * Flag to check if filters have been applied
-     */
-    applyFilters: {
-      type: Boolean
-    }
   }
 };
 </script>
