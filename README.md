@@ -18,6 +18,8 @@ npm run serve
 npm run styleguide
 ```
 
+And then go to `http://localhost:6060/`
+
 ### Run on a Docker container
 
 ```
@@ -59,7 +61,7 @@ vertical space.
 ### Implementation for v2
 
 One thing that this version lacks is the ability to handle search cases where
-there are more than 25 beers. Granted, the API's pagination feature can be
+there are more than 80 beers. Granted, the API's pagination feature can be
 used, but the problem is that there's no way to tell how many beers there are
 in total. That makes it difficult to know how many "pages" a user can go
 through. It's not as easy as making multiple calls for each search case, as
