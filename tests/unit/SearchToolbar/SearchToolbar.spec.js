@@ -21,21 +21,11 @@ describe("SearchToolbar.vue", () => {
     expect(wrapper.vm.height).not.toEqual(height);
   });
 
-  it("applies filters", done => {
+  it("applies filters after button click", () => {
     expect(wrapper.vm.applyFilters).toBeFalsy();
-    const searchButton = wrapper.find("v-btn-stub[type='button']");
+    const searchButton = wrapper.find(".search-button");
     searchButton.trigger("click");
     expect(wrapper.vm.applyFilters).toBeTruthy();
-    Vue.nextTick(() => {
-      expect(wrapper.vm.applyFilters).toBeFalsy();
-      done();
-    });
-  });
-
-  it("calls filtersChangeHandler", () => {
-    expect(wrapper.emitted("change:filters")).toBeFalsy();
-    wrapper.vm.filtersChangeHandler();
-    expect(wrapper.emitted("change:filters")).toBeTruthy();
   });
 
   it("calls checksChangeHandler", () => {
@@ -43,6 +33,18 @@ describe("SearchToolbar.vue", () => {
     expect(wrapper.emitted("change:headers")).toBeFalsy();
     wrapper.vm.checksChangeHandler(checks);
     expect(wrapper.emitted("change:headers")).toBeTruthy();
+  });
+
+  it("watches clearFilters", () => {
+    expect(wrapper.vm.clearFilters).toBeFalsy();
+    wrapper.setData({ clearFilters: true });
+    expect(wrapper.vm.clearFilters).toBeTruthy();
+  });
+
+  it("emits change:filter", () => {
+    expect(wrapper.emitted("change:filters")).toBeFalsy();
+    wrapper.vm.filtersChangeHandler({});
+    expect(wrapper.emitted("change:filters")).toBeTruthy();
   });
 
   it("SearchToolbar has same HTML structure", () => {

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchResults.vue SearchResults has same HTML structure 1`] = `
-<v-data-table-stub noDataText="$vuetify.noDataText" noResultsText="$vuetify.dataIterator.noResultsText" nextIcon="$vuetify.icons.next" prevIcon="$vuetify.icons.prev" rowsPerPageItems="" rowsPerPageText="$vuetify.dataTable.rowsPerPageText" search="" filter="function _default(val, search) {
+<v-data-table-stub noDataText="$vuetify.noDataText" noResultsText="$vuetify.dataIterator.noResultsText" nextIcon="$vuetify.icons.next" prevIcon="$vuetify.icons.prev" rowsPerPageItems="5,10,25,[object Object]" rowsPerPageText="$vuetify.dataTable.rowsPerPageText" filter="function _default(val, search) {
                 return val != null &amp;&amp; typeof val !== 'boolean' &amp;&amp; val.toString().toLowerCase().indexOf(search) !== -1;
             }" customFilter="function _default(items, search, filter, headers) {
                 search = search.toString().toLowerCase();

@@ -86,7 +86,7 @@ describe("SearchResults.vue", () => {
 
   it("handles empty headers array", () => {
     wrapper = shallowMount(SearchResults);
-    expect(wrapper.vm.headers.length).toEqual(0);
+    expect(wrapper.vm.headers).toBeUndefined();
   });
 
   it("SearchResults has same HTML structure", () => {

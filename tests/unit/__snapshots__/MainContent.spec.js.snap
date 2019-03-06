@@ -4,8 +4,10 @@ exports[`MainContent.vue MainContent has same HTML structure 1`] = `
 <v-container-stub tag="div">
   <v-layout-stub tag="div" text-xs-center="" wrap="">
     <v-flex-stub tag="div" mb-4="">
-      <v-text-field-stub append-icon="search" label="Search" single-line="" hide-details="" value=""></v-text-field-stub>
-      <SearchResultsContainer-stub search="" headers=""></SearchResultsContainer-stub>
+      <v-flex-stub tag="div" xs12="" sm8="" md6="" lg4="">
+        <v-text-field-stub append-icon="search" label="Search results" value=""></v-text-field-stub>
+      </v-flex-stub>
+      <SearchResultsContainer-stub search=""></SearchResultsContainer-stub>
     </v-flex-stub>
   </v-layout-stub>
 </v-container-stub>
