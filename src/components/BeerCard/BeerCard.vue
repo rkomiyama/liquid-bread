@@ -1,7 +1,7 @@
 <template>
-  <v-card flat>
+  <v-card flat class="beer-card">
     <v-layout>
-      <v-flex xs2>
+      <v-flex xs2 pa-2>
         <v-img :src="beer.image_url" class="beer-image"></v-img>
       </v-flex>
       <v-flex xs10>
@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.beer-card {
+  background-color: #343334;
+}
 .beer-image {
   background-color: white;
 }

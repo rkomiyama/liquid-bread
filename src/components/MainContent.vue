@@ -2,7 +2,9 @@
   <v-container>
     <v-layout text-xs-center wrap>
       <v-flex mb-4>
-        <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
+        <v-flex xs12 sm8 md6 lg4>
+          <v-text-field v-model="search" append-icon="search" label="Search results"></v-text-field>
+        </v-flex>
         <SearchResultsContainer :search="search" :headers="headers" :filters="filters"/>
       </v-flex>
     </v-layout>
