@@ -67,7 +67,7 @@ export default {
   },
   watch: {
     filters(filters) {
-      let searchParams = {};
+      let searchParams = { per_page: 80 };
 
       if (filters.abvGt) {
         searchParams.abv_gt = filters.abvGt;
